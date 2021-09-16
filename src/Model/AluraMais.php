@@ -14,7 +14,7 @@ class AluraMais extends Video implements Pontuavel
 
     public function recuperarUrl(): string
     {
-        return str_replace(' ', '-', strtolower($this->categoria));
+        return 'http://videos.alura.com.br/' . http_build_query(['categoria' => $this->categoria, 'nome' => $this->nome]);
     }
 
     public function recuperarPontuacao(): int
